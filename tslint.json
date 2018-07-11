@@ -1,0 +1,20 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended", "tslint-react"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "node_modules/**/*.ts"
+        ]
+    },
+    "rules": {
+        "ordered-imports": false,
+        "no-consecutive-blank-lines": false,
+        "no-trailing-whitespace": false,
+        "jsx-boolean-value": false,
+        "max-line-length": {
+            "options": [200]
+        }
+    }
+}

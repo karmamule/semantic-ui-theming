@@ -1,9 +1,18 @@
+var path = require('path');
+
 module.exports = {
     mode: "development",
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: path.resolve(__dirname, "/dist"),
+        publicPath: '/dist/'
+    },
+
+    devServer: {
+        contentBase: "./",
+        inline: true,
+        port: 8080
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -77,7 +86,7 @@ module.exports = {
                     }
                 ]
             },
-            
+
             // Needed for semantic-ui-react
             {
                 test: /\.(woff|woff2|eot|ttf|svg)$/,

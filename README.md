@@ -23,20 +23,43 @@ with the following exceptions/additions:
 and the page had you install wepback itself globally, so this will not work right. You can manually install the cli globally
 as well by "npm install -g webpack-cli", or install webpack locally with npm install webpack.
 
-2. npm install tslint tslint-loader --save-dev
+2. ```npm install tslint tslint-loader --save-dev```
 
-3. tslint --init
+3. ```tslint --init```
 
 4. Update webpack.config.js for tslint-loader as shown at https://github.com/wbuchwalter/tslint-loader but used the test 
+```
 test: /\.tsx?$/,
+```
 to match the awesome-typescript-loader regex
 
 5. npm install tslint-react and then add it to the extends section of tslint.json, e.g.
+```
         "extends": [
         "tslint:recommended", "tslint-react"
     ],
+```
+6. npm install semantic-ui-react semantic-ui-css. Put link to their css in index.html
 
-6. npm install semantic-ui-react and 
+7. To have your project served up npm install webpack-dev-server, 
+..* add 
+```var path = require('path');```
+to top of your webpack.config.js then in that file update your output section and add a devServer section as follows:
+```
+    output: {
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "/dist"),
+        publicPath: '/dist/'
+    },
+
+    devServer: {
+        contentBase: "./",
+        inline: true,
+        port: 8080
+    },
+```
+..* Update your start script in package.json to be
+```    "start": "webpack-dev-server --content-base dist/"```
 
 #### Known issues
 
@@ -51,10 +74,10 @@ installed tslint and webpack globally.  If you installed locally then add a star
 and use npm start.  This will build the distribution and you can then view index.html in your browser of choice (assuming webpack didn't have any errors).
 
 tslint not running correctly or seems to be ignoring tslint.json?  If so, there may be an error in tslint.json. Assuming you installed tslint locally, run it via CLI with
-./node_modules/.bin/tslint --project tsconfig.json
+```./node_modules/.bin/tslint --project tsconfig.json```
 and see if any error is listed.
 
 If your tslint.json is being ignored when running webpack, make sure you have NO **configuration:** section in your loader options
 for tslint-loader. If you do then that will completely supercede your tslint.json.  Remove the configuration: section in loader
-options and add a **configFile: './tslint.json'** (or whatever is appropriate path) and it should then be used.
+options and add a ```configFile: './tslint.json'``` (or whatever is appropriate path) and it should then be used.
 

@@ -42,24 +42,24 @@ to match the awesome-typescript-loader regex
 6. npm install semantic-ui-react semantic-ui-css. Put link to their css in index.html
 
 7. To have your project served up npm install webpack-dev-server, 
-..* add 
-```var path = require('path');```
-to top of your webpack.config.js then in that file update your output section and add a devServer section as follows:
-```
-    output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "/dist"),
-        publicPath: '/dist/'
-    },
+    * Add 
+    ```var path = require('path');```
+    to top of your webpack.config.js then in that file update your output section and add a devServer section as follows:
+    ```
+        output: {
+            filename: "bundle.js",
+            path: path.resolve(__dirname, "/dist"),
+            publicPath: '/dist/'
+        },
 
-    devServer: {
-        contentBase: "./",
-        inline: true,
-        port: 8080
-    },
-```
-..* Update your start script in package.json to be
-```    "start": "webpack-dev-server --content-base dist/"```
+        devServer: {
+            contentBase: "./",
+            inline: true,
+            port: 8080
+        },
+    ```
+    * Update your start script in package.json to be
+    ```    "start": "webpack-dev-server --content-base dist/"```
 
 #### Known issues
 

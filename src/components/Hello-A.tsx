@@ -31,7 +31,7 @@ export class HelloA extends React.Component<IHelloProps, {}> {
         return (
             <div>
                 <p>Hello <b>A</b> from {this.props.compiler} and {this.props.framework}</p>
-                <FancyParagraph message="Hello from a fancy react component within Hello-A..." />
+                <FancyParagraph message="Hello from a fancy react component within Hello-A" />
                 <br/><br/>
             </div>);
     }

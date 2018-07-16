@@ -10,7 +10,7 @@ ReactDOM.render (
         <HelloA compiler="Typescript" framework="React" /> 
         <HelloB compiler="Typescript" framework="React" />
         <br/><br/>
-        <ColorfulTable color="green" />
+        <ColorfulTable color="blue" />
     </div>,
     document.getElementById("example"),
 );

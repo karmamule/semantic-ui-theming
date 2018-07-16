@@ -14,7 +14,7 @@ interface IMessageProps {
 const FancyParagraph: React.SFC<IMessageProps> = (props) => {
     const fancyStyle: CSSProperties = {
         fontFamily: "lucida calligraphy",
-        paddingLeft: "30px",
+        paddingLeft: "20px",
     };
     const makeParagraph = (someText: string) => {
         return <p>{someText}</p>;

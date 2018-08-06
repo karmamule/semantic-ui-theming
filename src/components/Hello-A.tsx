@@ -7,7 +7,7 @@ export interface IHelloProps {
     framework: string;
 }
 
-interface IMessageProps {
+export interface IMessageProps {
     message: string;
 }
 

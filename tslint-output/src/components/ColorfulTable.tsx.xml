@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<checkstyle version="5.7">[36, 28]: Value must be set for boolean attributes
-[36, 61]: Value must be set for boolean attributes
-[36, 68]: Value must be set for boolean attributes
-</checkstyle>

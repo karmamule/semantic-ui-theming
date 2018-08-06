@@ -12,7 +12,19 @@
         "ordered-imports": false,
         "no-consecutive-blank-lines": false,
         "no-trailing-whitespace": false,
+        "no-console": false,
         "jsx-boolean-value": false,
+        "member-ordering": [
+            true,
+            {
+              "order": [
+                "static-field",
+                "constructor",
+                "instance-field",
+                "instance-method"
+              ]
+            }
+          ],
         "max-line-length": {
             "options": [200]
         }

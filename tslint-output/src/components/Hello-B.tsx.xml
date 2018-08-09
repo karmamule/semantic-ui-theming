@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<checkstyle version="5.7">[15, 5]: Declaration of instance field not allowed after declaration of instance method. Instead, this should come at the beginning of the class/interface.
-</checkstyle>

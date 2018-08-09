@@ -1,16 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-import { ColorfulTable } from "./components/ColorfulTable";
-import {HelloB} from "./components/Hello-B";
-import {HelloA} from "./components/Hello-A";
+import {WeatherTable} from "./components/weatherTable";
 
 ReactDOM.render (
     <div>
-        <HelloA compiler="Typescript" framework="React" /> 
-        <HelloB compiler="Typescript" framework="React" />
-        <br/><br/>
-        <ColorfulTable color="blue" />
+        <h2 className="ui header">Boston's Weather Forecast</h2>
+        <WeatherTable tableTitle="Boston's Hourly Forecast" initialRowsPerPage={5} />
     </div>,
     document.getElementById("example"),
 );

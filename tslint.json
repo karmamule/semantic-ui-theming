@@ -13,7 +13,11 @@
         "no-consecutive-blank-lines": false,
         "no-trailing-whitespace": false,
         "no-console": false,
+        "prefer-const": false, /* because it interferes with destructuring */
+        "jsx-no-multiline-js": false,
         "jsx-boolean-value": false,
+        "jsx-self-close": false,
+        "arrow-parens": [true, "ban-single-arg-parens"],
         "member-ordering": [
             true,
             {

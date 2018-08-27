@@ -1,0 +1,3 @@
+interface IMenuState {
+    activeItem?: string;
+}

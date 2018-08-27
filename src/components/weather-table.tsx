@@ -1,6 +1,8 @@
 import * as React from "react";
 import "isomorphic-fetch";
 import { Table } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
+import { Dimmer } from "semantic-ui-react";
 import * as moment from "moment";
 import { Icon, Pagination } from "semantic-ui-react";
 
@@ -54,7 +56,7 @@ export class WeatherTable extends React.Component<Props, IWeatherTableState> {
         .then(response =>  response.json() as Promise<IForecastData>,
         )
         .then(forecastData => {
-            this.setState({hourlyForecasts: forecastData.properties.periods, tableData: this.getTableData(forecastData.properties.periods, this.state.page)});
+            this.setState({hourlyForecasts: forecastData.properties.periods, tableData: this.getTableData(forecastData.properties.periods, this.state.page), hasData: true});
             // this.setState({hourlyForecast: forecastData.periods, hasData: true});
         })   
         .catch(logError);
@@ -111,19 +113,24 @@ export class WeatherTable extends React.Component<Props, IWeatherTableState> {
 
         return (
             <div>
-                <Table striped singleLine>
-                    <Table.Header>
-                        <Table.Row>
-                            <Table.HeaderCell>Hour</Table.HeaderCell>
-                            <Table.HeaderCell>&nbsp;</Table.HeaderCell>
-                            <Table.HeaderCell>Temperature</Table.HeaderCell>
-                            <Table.HeaderCell>Wind</Table.HeaderCell>
-                            <Table.HeaderCell>Forecast</Table.HeaderCell>
-                        </Table.Row>
-                    </Table.Header>
-                    <Table.Body>{tableRows}</Table.Body>
-                </Table>
-                <TablePager handlePageChange={this.handlePageChange} currentPage={this.state.page} />
+                <Segment>
+                    <Dimmer active={!this.state.hasData}>
+                        <h2>Loading...</h2>
+                    </Dimmer>
+                    <Table striped singleLine>
+                        <Table.Header>
+                            <Table.Row>
+                                <Table.HeaderCell>Hour</Table.HeaderCell>
+                                <Table.HeaderCell>&nbsp;</Table.HeaderCell>
+                                <Table.HeaderCell>Temperature</Table.HeaderCell>
+                                <Table.HeaderCell>Wind</Table.HeaderCell>
+                                <Table.HeaderCell>Forecast</Table.HeaderCell>
+                            </Table.Row>
+                        </Table.Header>
+                        <Table.Body>{tableRows}</Table.Body>
+                    </Table>
+                    <TablePager handlePageChange={this.handlePageChange} currentPage={this.state.page} />
+                </Segment>
             </div>
             );        
     }

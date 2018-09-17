@@ -24,8 +24,11 @@ export class ThemingPage extends React.Component<IThemingPageProps, ISemanticUiT
         return(
                 <div>
                     <div id="appHeader">
-                    <Image src={this.acadianLogoSource} floated="left" verticalAlign="middle" className="appHeaderImage" />
-                    <Header as="h1" inverted textAlign="right" verticalAlign="middle">Hourly Forecasts</Header>
+                        <Image src={this.acadianLogoSource} floated="left" verticalAlign="middle" className="appHeaderImage" />
+                        <Header inverted textAlign="right" verticalAlign="top">
+                            <div id="subtitle">Acadian Asset Management LLC</div>
+                            <div id="title">Kalai's Fabulous Prepsheet</div>
+                        </Header>
                     </div>
                     <h2 className="ui header">Boston's Weather Forecast</h2>
                     <WeatherTable tableTitle="Boston's Hourly Forecast" initialRowsPerPage={5} />

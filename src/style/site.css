@@ -7,6 +7,15 @@ body {
     height: 100px;
     padding: 5px;
     margin-bottom: 10px;
+    font-family: 'Calibri', 'Tahoma', 'verdana', 'sans-serif';
+}
+
+#subtitle {
+    font-size: 14px;
+}
+
+#title {
+    font-size: 30px;
 }
 
 .appHeaderImage {
